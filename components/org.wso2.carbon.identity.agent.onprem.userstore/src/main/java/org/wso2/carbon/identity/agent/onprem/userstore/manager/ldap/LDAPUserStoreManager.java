@@ -23,6 +23,7 @@ import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.identity.agent.onprem.userstore.constant.CommonConstants;
 import org.wso2.carbon.identity.agent.onprem.userstore.constant.LDAPConstants;
 import org.wso2.carbon.identity.agent.onprem.userstore.exception.UserStoreException;
+import org.wso2.carbon.identity.agent.onprem.userstore.manager.claim.CustomClaimModifier;
 import org.wso2.carbon.identity.agent.onprem.userstore.manager.common.UserStoreManager;
 import org.wso2.carbon.identity.agent.onprem.userstore.util.JNDIUtil;
 import org.wso2.carbon.identity.agent.onprem.userstore.util.UserStoreUtils;
@@ -422,7 +423,7 @@ public class LDAPUserStoreManager implements UserStoreManager {
             // close directory context
             JNDIUtil.closeContext(dirContext);
         }
-        return values;
+        return new CustomClaimModifier().setSharedAccountForSalesforce(values, userName);
     }
 
     /**

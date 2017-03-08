@@ -106,4 +106,8 @@
 		<ClaimURI>http://wso2.org/claims/streetaddress</ClaimURI>
 		<AttributeID>streetAddress</AttributeID>
 	</Claim>
+	<Claim>
+		<ClaimURI>http://wso2.org/claims/salesforcesharedaccount</ClaimURI>
+		<AttributeID>region</AttributeID>
+	</Claim>
 </ClaimConfig>
